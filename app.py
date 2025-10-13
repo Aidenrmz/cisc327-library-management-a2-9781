@@ -10,7 +10,7 @@ from database import init_database, add_sample_data
 from routes import register_blueprints
 
 
-def create_app():
+def create_app(testing: bool = False):
     """
     Application factory function to create and configure Flask app.
     
@@ -19,6 +19,7 @@ def create_app():
     """
     app = Flask(__name__)
     app.secret_key = "super secret key"
+    app.config.update(TESTING=testing)
     
     # Initialize the database
     init_database()
@@ -32,6 +33,7 @@ def create_app():
     return app
 
 
+app = create_app()
+
 if __name__ == '__main__':
-    app = create_app()
     app.run(debug=True, host='0.0.0.0', port=5000)

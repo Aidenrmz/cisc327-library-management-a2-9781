@@ -48,6 +48,10 @@ def init_database():
     conn.commit()
     conn.close()
 
+# Ensure tables exist as soon as this module is imported.
+# This allows service-layer functions to operate in tests without booting the Flask app.
+init_database()
+
 def add_sample_data():
     """Add sample data to the database if it's empty."""
     conn = get_db_connection()

@@ -93,7 +93,7 @@ def borrow_book_by_patron(patron_id: str, book_id: int) -> Tuple[bool, str]:
     # Insert borrow record and update availability
     borrow_success = insert_borrow_record(patron_id, book_id, borrow_date, due_date)
     if not borrow_success:
-        return False, "Database error occurred while creating borrow record."
+        return False, "Database error creating borrow record."
     
     availability_success = update_book_availability(book_id, -1)
     if not availability_success:
