@@ -1,11 +1,11 @@
 import pytest
 from datetime import datetime, timedelta
 
-import library_service  
-from library_service import calculate_late_fee_for_book
+import services.library_service as library_service  
+from services.library_service import calculate_late_fee_for_book
 
 # Mark all tests in this module as expected to fail until R5 is implemented
-pytestmark = pytest.mark.xfail(strict=True, reason="R5 not implemented yet")
+
 
 
 def with_active_loan(days_overdue: int):

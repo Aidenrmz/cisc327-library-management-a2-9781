@@ -17,7 +17,9 @@ def search_books():
     search_type = request.args.get('type', 'title')
     
     if not search_term:
-        return render_template('search.html', books=[], search_term='', search_type=search_type)
+        # Intentionally do not provide results yet (feature not implemented)
+        flash('Search functionality is not yet implemented.', 'error')
+        return render_template('search.html', books=None, search_term='', search_type=search_type)
     
     # Use business logic function
     books = search_books_in_catalog(search_term, search_type)

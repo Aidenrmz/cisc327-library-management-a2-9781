@@ -3,10 +3,10 @@ import pytest
 from datetime import datetime, timedelta
 
 # Mark all tests in this module as expected to fail until R4 is implemented
-pytestmark = pytest.mark.xfail(strict=True, reason="R4 not implemented yet")
 
-import library_service  
-from library_service import return_book_by_patron
+
+import services.library_service as library_service  
+from services.library_service import return_book_by_patron
 
 
 

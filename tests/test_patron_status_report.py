@@ -1,11 +1,11 @@
 import pytest
 from datetime import datetime, timedelta
 
-import library_service  
-from library_service import get_patron_status_report
+import services.library_service as library_service  
+from services.library_service import get_patron_status_report
 
 # Mark the whole module as expected-failing until R7 is implemented
-pytestmark = pytest.mark.xfail(strict=True, reason="R7 not implemented yet (get_patron_status_report)")
+
 
 
 def borrowed_item(book_id, title, days_overdue=0):

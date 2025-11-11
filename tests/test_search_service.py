@@ -1,6 +1,6 @@
 import pytest
-import library_service  
-from library_service import search_books_in_catalog
+import services.library_service as library_service  
+from services.library_service import search_books_in_catalog
 
 def book(id, title, author, isbn, total=3, available=2):
     return {
@@ -13,7 +13,7 @@ def book(id, title, author, isbn, total=3, available=2):
     }
 
 # Mark all tests in this module as expected to fail until R6 is implemented
-pytestmark = pytest.mark.xfail(strict=True, reason="R6 not implemented yet")
+
 
 def test_search_title_partial_case_insensitive(monkeypatch):
     sample = [

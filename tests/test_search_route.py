@@ -1,7 +1,8 @@
 import pytest
 from flask import template_rendered
 from contextlib import contextmanager
-import library_service 
+import services.library_service as library_service 
+from services.library_service import search_books_in_catalog
 
 # Mark all tests in this module as expected to fail until R6 is implemented
 pytestmark = pytest.mark.xfail(strict=True, reason="R6 not implemented yet")

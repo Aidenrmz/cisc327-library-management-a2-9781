@@ -2,8 +2,8 @@ import re
 import pytest
 from datetime import datetime, timedelta
 
-import library_service 
-from library_service import borrow_book_by_patron  
+import services.library_service as library_service 
+from services.library_service import borrow_book_by_patron  
 
 def fake_book(available=1, total=3, title="Test Title", book_id=1):
     """

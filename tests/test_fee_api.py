@@ -1,6 +1,6 @@
 import pytest
 from flask import url_for
-import library_service
+import services.library_service as library_service
 
 # Mark all tests in this module as expected to fail until R5 is implemented
 pytestmark = pytest.mark.xfail(strict=True, reason="R5 not implemented yet")
